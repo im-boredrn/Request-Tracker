@@ -12,17 +12,25 @@
         <main>
             <section id="request-popup">
                 <form id="request">
+                    <h1> Submit a Request</h1>
                     <div id="category">
-                    <label for="request-category">Request Category:</label>
-                    <select id="request-category" name="request category">
-                        <option value="Maintenance">Maintenance</option>
-                        <option value="Repair">Repair</option>
-                        <option value="Installation">Installation</option>
-                    </select>
-                </div>
 
-                <input type="text" placeholder="Describe your problem" min="20" maxlength="300" 
-                id="request-description">
+                        <div class="select-wrapper">
+                            <select id="request-category" name="category" required>
+                                <option value="" disabled selected>Choose a category</option>
+                                <option value="Maintenance">Maintenance</option>
+                                <option value="Repair">Repair</option>
+                                <option value="Installation">Installation</option>
+                            </select>
+
+                            <span class="chevron" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+                    <input type="text" placeholder="Subject" minlength="10" maxlength="50" id="request-subject" required>
+
+                <textarea placeholder="Describe your issue" minlength="20" maxlength="300" 
+                id="request-description"  required></textarea>
 
                 <input type="submit" value="Submit Request" id="request-submit">
                 </form>
