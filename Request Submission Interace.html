@@ -10,7 +10,24 @@
     </head>
     <body>
         <main>
-            
+            <section id="request-popup">
+                <form id="request">
+                    <div id="category">
+                    <label for="request-category">Request Category:</label>
+                    <select id="request-category" name="request category">
+                        <option value="Maintenance">Maintenance</option>
+                        <option value="Repair">Repair</option>
+                        <option value="Installation">Installation</option>
+                    </select>
+                </div>
+
+                <input type="text" placeholder="Describe your problem" min="20" maxlength="300" 
+                id="request-description">
+
+                <input type="submit" value="Submit Request" id="request-submit">
+                </form>
+                
+            </section>
         </main>
     </body>
 </html>
