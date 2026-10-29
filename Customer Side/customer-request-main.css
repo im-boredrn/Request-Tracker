@@ -1,0 +1,44 @@
+body {
+     background-color: #f5f5f5;
+    display: flex;
+    font-family: Arial, Helvetica, sans-serif;
+    min-height: 80vh;
+    min-width: 80vw;
+}
+
+
+
+#Header {
+    box-sizing: border-box;
+
+    text-align: center;
+
+    min-width: 99.6vw;
+}
+
+#Header hr {
+    border-radius: 1.5rem;
+
+    border: 3px solid #1f2937;
+
+    background-color: solid #1f2937;
+}
+
+#requests { /* Do a media query for smaller screens where flex-d:coloumn */ 
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+}
+
+.button-wrapper button {
+
+    border-radius:  1rem;
+    border: 1px solid orangered;
+    background-color: orangered;
+
+    color: whitesmoke;
+    font:inherit;
+    font-size: large;
+    
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> Main Request Page </title>
+    <meta name="author" content="Maurice" >
+    <link rel="stylesheet" href="customer-request-main.css">
+   <!--  <script src="script.js" defer></script> -->
+    </head>
+    <body>
+        <main>
+            <section id="Header">
+                <h1>Your Requests</h1>
+                <hr>
+            </section>
+
+            <section id="requests"> <!-- Has to be scrollable + js has to add requests-->
+                
+                <div class="request-wrapper">
+
+                    <div class="request-info">
+                        <h3>Subject</h3>
+                        <span>10/28/26</span>
+                    </div>
+
+                    <span class="request-category">Repair</span>
+
+                    <div class="request-actions">
+                        <span class="request-status">Pending</span>
+
+                        <button class="view-details">View Details</button>
+                        <span class="Arrow" aria-hidden="true"></span>
+                    </div>
+                </div>
+                <!-- Requests above Btn-->
+                <div class="button-wrapper">
+                    <button value="Create Request" name="Create Request" id="request-creator">Create Request</button> 
+                    <span class="Plus" aria-hidden="true"></span>
+                </div>
+            </section>
+
+        </main>
+    </body>
+</html>
