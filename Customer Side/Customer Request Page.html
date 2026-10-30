@@ -6,7 +6,8 @@
     <title> Main Request Page </title>
     <meta name="author" content="Maurice" >
     <link rel="stylesheet" href="customer-request-main.css">
-   <!--  <script src="script.js" defer></script> -->
+    <link rel="stylesheet" href="requestpopup.css">
+    <script src="modal.js" defer></script> 
     </head>
     <body>
         <main>
@@ -18,18 +19,20 @@
             <section id="requests"> <!-- Has to be scrollable + js has to add requests-->
                 
                 <div class="request-wrapper">
-
                     <div class="request-info">
+                        <div class="request-heading">
                         <h3>Subject</h3>
                         <span>10/28/26</span>
+                        </div>
+                        <span class="request-category">Repair</span>
+
                     </div>
 
-                    <span class="request-category">Repair</span>
 
                     <div class="request-actions">
                         <span class="request-status">Pending</span>
 
-                        <button class="view-details">View Details</button>
+                        <button class="view-details" id="modal-btn">View Details</button>
                         <span class="Arrow" aria-hidden="true"></span>
                     </div>
                 </div>
@@ -39,6 +42,38 @@
                     <span class="Plus" aria-hidden="true"></span>
                 </div>
             </section>
+
+     <dialog id="request-popup">
+                <form id="request">
+                    <div class="popup-heading">
+                        <h1> Submit a Request</h1>
+                        <button type="button" id="modal-close"
+                            aria-label="Close dialog">&times;
+                        </button>
+                    </div>
+                    <div id="category">
+
+                        <div class="select-wrapper">
+                            <select id="request-category" name="category" required>
+                                <option value="" disabled selected>Choose a category</option>
+                                <option value="Maintenance">Maintenance</option>
+                                <option value="Repair">Repair</option>
+                                <option value="Installation">Installation</option>
+                            </select>
+
+                            <span class="chevron" aria-hidden="true"></span>
+                        </div>
+                    </div>
+
+                    <input type="text" placeholder="Subject" minlength="10" maxlength="50" id="request-subject" required>
+
+                <textarea placeholder="Describe your issue" minlength="20" maxlength="300" 
+                id="request-description"  required></textarea>
+
+                <input type="submit" value="Submit Request" id="request-submit">
+                </form>
+                
+     </dialog>
 
         </main>
     </body>
