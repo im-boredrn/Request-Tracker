@@ -24,11 +24,56 @@ body {
     background-color: solid #1f2937;
 }
 
+#Header h1 {
+    font-weight: 500;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0.3rem;
+}
+
 #requests { /* Do a media query for smaller screens where flex-d:coloumn */ 
     display: flex;
     justify-content: center;
     align-items: center;
     flex-direction: row;
+}
+
+.request-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+
+    padding: 1rem 1.25rem;
+    background-color: white;
+    border: 1px solid #e5e7eb;
+}
+
+.request-info,.request-actions {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    
+}
+
+.request-heading {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+    padding-right: 1rem;
+    border-right: 2px solid #1f2937;
+}
+
+.request-heading h3 {
+    margin: 0;
+}
+
+.request-heading span {
+    color: #64748b;
+    font-size: 0.875rem;
+}
+
+.request-actions {
+    margin-left: auto;
 }
 
 .button-wrapper button {
@@ -40,5 +85,35 @@ body {
     color: whitesmoke;
     font:inherit;
     font-size: large;
+
+    cursor: pointer;
     
+}
+
+.view-details {
+    border-radius: 1rem;
+    border: 1px solid #1f2937;
+    background-color: #1f2937;
+
+    color: whitesmoke;
+    font: inherit;
+
+    margin-left: auto;
+
+    cursor: pointer;
+}
+
+
+
+@media (max-width: 500px) {
+    .request-wrapper {
+        align-items: flex-start;
+        flex-direction: column;
+    }
+
+    .request-actions {
+        width: 100%;
+        justify-content: space-between;
+        margin-left: 0;
+    }
 }
