@@ -7,8 +7,7 @@
     <meta name="author" content="Maurice" >
     <link rel="stylesheet" href="customer-request-main.css">
     <link rel="stylesheet" href="requestpopup.css">
-    <script src="modal.js" defer></script> 
-    <script src="requestcreation.js" defer></script>
+    <script type="module" src="main.js" ></script>
     </head>
     <body>
         <main>
@@ -61,6 +60,10 @@
                 
      </dialog>
 
+     <!-- <dialog id="details-popup">
+
+     </dialog> -->
+
         </main>
 
           <template id="request-template">
@@ -77,7 +80,7 @@
                         <div class="request-actions">
                             <span class="request-status">Pending</span>
 
-                            <button class="view-details" id="modal-btn">View Details</button>
+                            <button class="view-details" id="modal-btn" data-request-id="">View Details</button>
                             <span class="Arrow" aria-hidden="true"></span>
                         </div>
                     </div>

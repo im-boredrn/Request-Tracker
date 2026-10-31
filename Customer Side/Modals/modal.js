@@ -1,4 +1,4 @@
-const modal = document.getElementById("request-popup");
+ const modal = document.getElementById("request-popup");
 const btn = document.getElementById("request-creator");
 const modalclose = document.getElementById("modal-close");
 btn.addEventListener("click",() => {

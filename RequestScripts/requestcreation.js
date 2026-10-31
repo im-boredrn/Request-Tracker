@@ -1,22 +1,21 @@
-const form = document.getElementById("request");
+import { submitRequest } from "./requestData";
 
-const requestSection = document.getElementById("requests");
-
-let allRequests = [];
-
-allRequests = loadRequests();
-
-displayRecordOnMainScreen(selectRequests(allRequests))
-
-form.addEventListener("submit", (event) => {
+export function initializeRequestForm()
+{
+    const form = document.getElementById("request");
+    form.addEventListener("submit", (event) => {
     event.preventDefault();
 
     const request = captureRequest(form);
     const validated = validateRequest(request);
+
     submitRequest(validated);
-    //closeModal();
-    displayRecordOnMainScreen(selectRequests(allRequests));
+   // modal.closeModal();
+   // displayRecordOnMainScreen(selectRequests(allRequests));
 });
+}
+
+//import { modal } from "./modal";
 
 function captureRequest(formV) // input : form , output : formValues array
 {
@@ -83,48 +82,17 @@ function validateRequest(request)
 
 }
 
-function submitRequest(request)
-{
-    allRequests.push(request);
 
-    localStorage.setItem('requestCollection', JSON.stringify(allRequests));
-}
+requestSection.addEventListener("click", (event) => {
+    const button = event.target.closest(".view-details");
 
-function loadRequests()
-{
-    const retrievedRequests = JSON.parse(localStorage.getItem('requestCollection')) || [];
-    return retrievedRequests;
-}
+    if (!button) return;
 
-function selectRequests(requestCollection)
-{
-    let lowerRange = requestCollection.length - 3
+    const requestId = button.dataset.requestId;
 
-    let upperRange = requestCollection.length + 1;
+    const selectedRequest = allRequests.find(request => request.id === requestId)
 
-    if (lowerRange < 0) lowerRange = 0;
-    let selectedRequests = requestCollection.slice(lowerRange,upperRange);
+    console.log(selectedRequest)
 
-    return selectedRequests;
-}
 
-function displayRecordOnMainScreen(requests)
-{
-    requestSection.replaceChildren();
-    requests.forEach(request => {
-        addRequest(request);
-    });
-}
-
-function addRequest(request)
-{
-    const template = document.getElementById('request-template');
-    const clone = template.content.cloneNode(true);
-
-    clone.querySelector(".request-subject").textContent = request.subject;
-    clone.querySelector(".request-date").textContent = request.date;
-    clone.querySelector(".request-category").textContent = request.category;
-    clone.querySelector(".request-status").textContent = request.status;
-
-    requestSection.appendChild(clone);
-}
+});
