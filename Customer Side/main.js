@@ -1,6 +1,6 @@
-import { loadRequests,getRequests,getSelectedRequests } from "../RequestScripts/requestData";
-import { initializeRequestForm } from "../RequestScripts/requestcreation";
-import { displayRecordOnMainScreen } from "../RequestScripts/requestDisplay";
+import { loadRequests,getRequests,getSelectedRequests } from "../RequestScripts/requestData.js";
+import { initializeRequestForm } from "../RequestScripts/requestcreation.js";
+import { displayRecordOnMainScreen } from "../RequestScripts/requestDisplay.js";
 
 loadRequests();
 

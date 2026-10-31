@@ -1,4 +1,4 @@
-import { submitRequest } from "./requestData";
+import { submitRequest } from "../Customer Side/requestData.js";
 
 export function initializeRequestForm()
 {
