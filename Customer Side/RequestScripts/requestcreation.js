@@ -1,5 +1,5 @@
 import { submitRequest } from "./requestData.js";
-
+import { modal } from "../Modals/modal.js";
 export function initializeRequestForm()
 {
     const form = document.getElementById("request");
@@ -10,11 +10,10 @@ export function initializeRequestForm()
     const validated = validateRequest(request);
 
     submitRequest(validated);
-   // modal.closeModal();
+    modal.close();
 });
 }
 
-//import { modal } from "./modal";
 
 function captureRequest(formV) // input : form , output : formValues array
 {
@@ -75,6 +74,7 @@ function validateRequest(request)
     {
         request.status = "Rejected"
         request.errors = errors;
+        return;
     }
 
     return request;

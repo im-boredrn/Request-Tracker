@@ -1,4 +1,8 @@
- const modal = document.getElementById("request-popup");
+ export const modal = document.getElementById("request-popup");
+
+
+export function initializeCreateRequestModal()
+{
 const btn = document.getElementById("request-creator");
 const modalclose = document.getElementById("modal-close");
 btn.addEventListener("click",() => {
@@ -23,4 +27,4 @@ modalclose.addEventListener("click", () => {
         modal.close();
     }
 });
-
+}
