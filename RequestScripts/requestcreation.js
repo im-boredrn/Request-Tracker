@@ -1,4 +1,4 @@
-import { submitRequest } from "../Customer Side/requestData.js";
+import { submitRequest } from "./requestData.js";
 
 export function initializeRequestForm()
 {
@@ -11,7 +11,6 @@ export function initializeRequestForm()
 
     submitRequest(validated);
    // modal.closeModal();
-   // displayRecordOnMainScreen(selectRequests(allRequests));
 });
 }
 
@@ -83,16 +82,16 @@ function validateRequest(request)
 }
 
 
-requestSection.addEventListener("click", (event) => {
-    const button = event.target.closest(".view-details");
+// requestSection.addEventListener("click", (event) => {
+//     const button = event.target.closest(".view-details");
 
-    if (!button) return;
+//     if (!button) return;
 
-    const requestId = button.dataset.requestId;
+//     const requestId = button.dataset.requestId;
 
-    const selectedRequest = allRequests.find(request => request.id === requestId)
+//     const selectedRequest = allRequests.find(request => request.id === requestId)
 
-    console.log(selectedRequest)
+//     console.log(selectedRequest)
 
 
-});
+// });

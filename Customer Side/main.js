@@ -6,4 +6,4 @@ loadRequests();
 
 initializeRequestForm();
 
-displayRecordOnMainScreen(getSelectedRequests())
+displayRecordOnMainScreen(getSelectedRequests(getRequests()));
