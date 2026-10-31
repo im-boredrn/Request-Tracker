@@ -33,8 +33,11 @@ body {
 #requests { /* Do a media query for smaller screens where flex-d:coloumn */ 
     display: flex;
     justify-content: center;
-    align-items: center;
-    flex-direction: row;
+    align-items: stretch;
+    flex-direction: column;
+
+    gap: 1rem;
+
 }
 
 .request-wrapper {
@@ -46,6 +49,7 @@ body {
     padding: 1rem 1.25rem;
     background-color: white;
     border: 1px solid #e5e7eb;
+    border-radius: 1rem;
 }
 
 .request-info,.request-actions {
@@ -87,6 +91,8 @@ body {
     font-size: large;
 
     cursor: pointer;
+
+    margin-top: 1rem;
     
 }
 

@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="customer-request-main.css">
     <link rel="stylesheet" href="requestpopup.css">
     <script src="modal.js" defer></script> 
+    <script src="requestcreation.js" defer></script>
     </head>
     <body>
         <main>
@@ -18,33 +19,17 @@
 
             <section id="requests"> <!-- Has to be scrollable + js has to add requests-->
                 
-                <div class="request-wrapper">
-                    <div class="request-info">
-                        <div class="request-heading">
-                        <h3>Subject</h3>
-                        <span>10/28/26</span>
-                        </div>
-                        <span class="request-category">Repair</span>
-
-                    </div>
-
-
-                    <div class="request-actions">
-                        <span class="request-status">Pending</span>
-
-                        <button class="view-details" id="modal-btn">View Details</button>
-                        <span class="Arrow" aria-hidden="true"></span>
-                    </div>
-                </div>
-                <!-- Requests above Btn-->
-                <div class="button-wrapper">
+              
+                    
+               
+            </section>
+             <div class="button-wrapper">
                     <button value="Create Request" name="Create Request" id="request-creator">Create Request</button> 
                     <span class="Plus" aria-hidden="true"></span>
                 </div>
-            </section>
 
      <dialog id="request-popup">
-                <form id="request">
+                <form action="" method="get" id="request">
                     <div class="popup-heading">
                         <h1> Submit a Request</h1>
                         <button type="button" id="modal-close"
@@ -65,16 +50,37 @@
                         </div>
                     </div>
 
-                    <input type="text" placeholder="Subject" minlength="10" maxlength="50" id="request-subject" required>
+                    <input type="text" placeholder="Subject" name="subject" minlength="10" maxlength="40" id="request-subject" required>
 
-                <textarea placeholder="Describe your issue" minlength="20" maxlength="300" 
-                id="request-description"  required></textarea>
+                    <textarea placeholder="Describe your issue" name="description" minlength="20" maxlength="300" 
+                    id="request-description"  required></textarea>
 
-                <input type="submit" value="Submit Request" id="request-submit">
+                    <input type="submit" value="Submit Request" id="request-submit">
+                    <!-- Inputs need a name or they will be ignored-->
                 </form>
                 
      </dialog>
 
         </main>
+
+          <template id="request-template">
+                    <div class="request-wrapper">
+                        <div class="request-info">
+                            <div class="request-heading">
+                            <h3 class="request-subject"></h3>
+                            <span class="request-date"></span>
+                            </div>
+                            <span class="request-category"></span>
+                        </div>
+
+
+                        <div class="request-actions">
+                            <span class="request-status">Pending</span>
+
+                            <button class="view-details" id="modal-btn">View Details</button>
+                            <span class="Arrow" aria-hidden="true"></span>
+                        </div>
+                    </div>
+                </template>    
     </body>
 </html>
