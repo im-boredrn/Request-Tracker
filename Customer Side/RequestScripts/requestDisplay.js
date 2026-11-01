@@ -1,6 +1,8 @@
+export const requestSection = document.getElementById("requests")
+
+
 export function displayRecordOnMainScreen(selectedRequests)
 {
-    const requestSection = document.getElementById("requests")
     requestSection.replaceChildren();
     selectedRequests.forEach(request => {
         addRequest(request, requestSection);
@@ -21,16 +23,3 @@ function addRequest(request, requestSection)
     requestSection.appendChild(clone);
 }
 
-// requestSection.addEventListener("click", (event) => {
-//     const button = event.target.closest(".view-details");
-
-//     if (!button) return;
-
-//     const requestId = button.dataset.requestId;
-
-//     const selectedRequest = allRequests.find(request => request.id === requestId)
-
-//     console.log(selectedRequest)
-
-
-// });

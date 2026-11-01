@@ -7,6 +7,7 @@
     <meta name="author" content="Maurice" >
     <link rel="stylesheet" href="CSS/customer-request-main.css">
     <link rel="stylesheet" href="CSS/requestpopup.css">
+    <link rel="stylesheet" href="CSS/details-popup.css">
     <script type="module" src="main.js" ></script>
     </head>
     <body>
@@ -82,19 +83,38 @@
                 
                 <template id="details-template">
 
-                    <dialog id="details-popup">
+                    <dialog class="details-popup">
                         <div class="details-major">
-                            <h2 class="details-subject"></h2>
-                            <p class="details-description"></p>
-                            <hr>
+                            <div class="details-text">
+                        <h2 class="details-subject">Rectangular </h2>
+                        <span class="details-category">Repair</span>
+                            </div>
+                            <div class="details-description-wrapper">
+                                <p class="details-description"></p>
+                            </div>
+                    
                         </div>
-                        
-                        <div class="details-minor">
-                            <hr>
-                            <span class="details-id"></span>
-                            <button class="details-cancel">Cancel Request</button>
-                        </div>
-                        
+
+                <div class="details-minor">
+                    <div class="details-id-wrapper">
+                        <span class="details-id">ID:</span>
+                        <span class="details-id-value"></span>                        
+                    </div>
+                    <div class="details-status-wrapper">
+                        <span class="details-status-name">Status:</span>
+                        <span class="details-status"></span>
+                    </div>
+
+                    <div class="details-date-wrapper">
+                        <span class="details-subdate">Submission Date:</span>
+                        <span class="details-date"></span>
+                    </div>
+                 
+                    <button class="details-cancel">Cancel Request</button>
+                </div>
+
+                
+
                     </dialog>
 
                 </template>
