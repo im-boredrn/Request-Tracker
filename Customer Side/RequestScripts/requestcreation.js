@@ -80,18 +80,3 @@ function validateRequest(request)
     return request;
 
 }
-
-
-// requestSection.addEventListener("click", (event) => {
-//     const button = event.target.closest(".view-details");
-
-//     if (!button) return;
-
-//     const requestId = button.dataset.requestId;
-
-//     const selectedRequest = allRequests.find(request => request.id === requestId)
-
-//     console.log(selectedRequest)
-
-
-// });

@@ -12,7 +12,7 @@ export function getRequests ()
 
 export function getSelectedRequests(requestCollection)
 {
-    let lowerRange = requestCollection.length - 3
+    let lowerRange = requestCollection.length - 4
 
     let upperRange = requestCollection.length + 1;
 

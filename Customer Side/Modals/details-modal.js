@@ -6,7 +6,7 @@ detailsbtn.addEventListener("click",() => {
 
 });
 
-modalclose.addEventListener("click", () => {
+detailsmodalclose.addEventListener("click", () => {
     detailsModal.close()
 });
 
