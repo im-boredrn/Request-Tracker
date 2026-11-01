@@ -73,7 +73,18 @@ body {
     text-align: center;
     font: inherit;
     font-size: large;
+    color: rgb(92, 89, 89);
     
+}
+
+.details-id-wrapper {
+    display: flex;
+    flex-direction: column;
+}
+
+.details-status-wrapper {
+    display: flex;
+    flex-direction: column;
 }
 
 .details-date-wrapper {
