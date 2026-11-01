@@ -23,3 +23,8 @@ function addRequest(request, requestSection)
     requestSection.appendChild(clone);
 }
 
+export function refreshRequests()
+{
+    
+}
+

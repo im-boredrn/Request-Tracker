@@ -1,5 +1,6 @@
-import { submitRequest } from "./requestData.js";
+import { submitRequest,getSelectedRequests,getRequests } from "./requestData.js";
 import { modal } from "../Modals/modal.js";
+import { displayRecordOnMainScreen } from "./requestDisplay.js";
 export function initializeRequestForm()
 {
     const form = document.getElementById("request");
@@ -10,6 +11,8 @@ export function initializeRequestForm()
     const validated = validateRequest(request);
 
     submitRequest(validated);
+    displayRecordOnMainScreen(getSelectedRequests(getRequests()));
+    
     modal.close();
 });
 }

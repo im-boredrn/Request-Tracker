@@ -10,6 +10,14 @@ export function getRequests ()
     return allRequests;
 }
 
+export function deleteRequest(requestId)
+{
+    allRequests = allRequests.filter(request => request.id !== requestId);
+
+     localStorage.setItem('requestCollection',JSON.stringify(allRequests));
+
+}
+
 export function getSelectedRequests(requestCollection)
 {
     let lowerRange = requestCollection.length - 4

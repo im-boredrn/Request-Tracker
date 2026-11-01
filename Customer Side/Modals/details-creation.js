@@ -1,32 +1,24 @@
 
-import { requestSection } from "../RequestScripts/requestDisplay.js";
-import {getRequests} from "../RequestScripts/requestData.js"
+import { requestSection,displayRecordOnMainScreen } from "../RequestScripts/requestDisplay.js";
+import {getRequests,deleteRequest,getSelectedRequests} from "../RequestScripts/requestData.js"
 
 export function createDetailsModal()
 {
 const detailsTemplate = document.getElementById("details-template");
 const detailsModal = detailsTemplate.content.firstElementChild.cloneNode(true);
+let selectedRequestId = null;
 
-document.body.appendChild(detailsModal);
+const cancelbtn = detailsModal.querySelector(".details-cancel");
 
-requestSection.addEventListener("click", (event) => {
-    const button = event.target.closest(".view-details");
+   cancelbtn.addEventListener("click", () => {
+        deleteRequest(selectedRequestId);
 
-    if (!button) return;
+        displayRecordOnMainScreen(getSelectedRequests(getRequests()));
 
-    const requestId = button.dataset.requestId;
+        detailsModal.close();
+    });
 
-    const selectedRequest = getRequests().find(request => request.id === requestId)
-
-    detailsModal.querySelector(".details-subject").textContent = selectedRequest.subject;
-    detailsModal.querySelector(".details-description").textContent = selectedRequest.description;
-    detailsModal.querySelector(".details-id-value").textContent = selectedRequest.id;
-    detailsModal.querySelector(".details-date").textContent = selectedRequest.date;
-    detailsModal.querySelector(".details-status").textContent = selectedRequest.status;
-    detailsModal.querySelector(".details-category").textContent = selectedRequest.category;
-
-    detailsModal.showModal();
-
+    
      detailsModal.addEventListener("click", (event) => {
     const rect = detailsModal.getBoundingClientRect();
 
@@ -41,16 +33,34 @@ requestSection.addEventListener("click", (event) => {
     }
 });
 
+document.body.appendChild(detailsModal);
+
+requestSection.addEventListener("click", (event) => {
+    const button = event.target.closest(".view-details");
+
+    if (!button) return;
+
+    const requestId = button.dataset.requestId;
+
+    const selectedRequest = getRequests().find(request => request.id === requestId)
+    selectedRequestId = selectedRequest.id;
+
+    detailsModal.querySelector(".details-subject").textContent = selectedRequest.subject;
+    detailsModal.querySelector(".details-description").textContent = selectedRequest.description;
+    detailsModal.querySelector(".details-id-value").textContent = selectedRequest.id;
+    detailsModal.querySelector(".details-date").textContent = selectedRequest.date;
+    detailsModal.querySelector(".details-status").textContent = selectedRequest.status;
+    detailsModal.querySelector(".details-category").textContent = selectedRequest.category;
+
+    detailsModal.showModal();
+
+
+
+ 
+
 });
-
-
 }
 
-// // const detailsmodalclose = document.querySelector(".details-cancel");
-// detailsbtn.addEventListener("click",() => {
-//     detailsModal.showModal();
-
-// });
 
 
 
